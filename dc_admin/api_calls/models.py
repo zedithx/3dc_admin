@@ -15,7 +15,6 @@ class EventMember(models.Model):
     role = models.TextField()
 
     class Meta:
-        managed = False
         db_table = 'Event_Member'
 
 
@@ -30,7 +29,6 @@ class Events(models.Model):
     collab = models.ForeignKey('Organisations', models.DO_NOTHING)
 
     class Meta:
-        managed = False
         db_table = 'Events'
 
 
@@ -42,7 +40,6 @@ class EventsCat(models.Model):
     color = models.TextField()
 
     class Meta:
-        managed = False
         db_table = 'Events_Cat'
 
 
@@ -58,7 +55,6 @@ class Members(models.Model):
     start_date = models.DateTimeField()
 
     class Meta:
-        managed = False
         db_table = 'Members'
 
 
@@ -69,7 +65,6 @@ class MembersRole(models.Model):
     color = models.TextField()
 
     class Meta:
-        managed = False
         db_table = 'Members_Role'
 
 
@@ -81,7 +76,6 @@ class Organisations(models.Model):
     poc_email = models.TextField(db_column='POC_email', unique=True, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'Organisations'
 
 
@@ -94,7 +88,6 @@ class Posts(models.Model):
     caption = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'Posts'
 
 
@@ -105,7 +98,6 @@ class ProjectMember(models.Model):
     role = models.TextField()
 
     class Meta:
-        managed = False
         db_table = 'Project_Member'
 
 
@@ -120,7 +112,6 @@ class Projects(models.Model):
     collab = models.ForeignKey(Organisations, models.DO_NOTHING)
 
     class Meta:
-        managed = False
         db_table = 'Projects'
 
 
@@ -132,7 +123,6 @@ class ProjectsCat(models.Model):
     color = models.TextField()
 
     class Meta:
-        managed = False
         db_table = 'Projects_Cat'
 
 
