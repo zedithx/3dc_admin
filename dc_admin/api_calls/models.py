@@ -27,6 +27,7 @@ class Events(models.Model):
     start_date = models.DateTimeField()
     end_date = models.DateTimeField(blank=True, null=True)
     collab = models.ForeignKey('Organisations', models.DO_NOTHING)
+    is_featured = models.BooleanField(default=False, null=True)
 
     class Meta:
         db_table = 'Events'
