@@ -8,7 +8,6 @@ class MembersAdmin(admin.ModelAdmin):
     list_display = ("name", "email", "end_date", "github_link",
                     "image_link", "linkedin_link", "linked_member_role", "start_date")
     search_fields = ['name', 'email']
-    readonly_fields = ['id']
 
     def linked_member_role(self, obj):
         return obj.member_role.title if obj.member_role else None
@@ -24,7 +23,6 @@ class EventsAdmin(admin.ModelAdmin):
     list_display = ("title", "linked_events_cat", "description", "image_link", "start_date", "end_date", "linked_collab",
                     "is_featured")
     search_fields = ['title']
-    readonly_fields = ['id']
 
     def linked_events_cat(self, obj):
         return obj.event_cat.title if obj.event_cat else None
@@ -45,7 +43,6 @@ class EventsAdmin(admin.ModelAdmin):
 class ProjectsAdmin(admin.ModelAdmin):
     list_display = ("title", "linked_project_cat", "description", "image_link", "start_date", "end_date", "linked_collab")
     search_fields = ['title']
-    readonly_fields = ['id']
 
     def linked_collab(self, obj):
         return obj.collab.name if obj.collab else None
